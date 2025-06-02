@@ -7,7 +7,7 @@ import api from './api';
 
 
 function Register() {
-  const [formData, setFormData] = useState({ name: "", email: "", password: "" });
+  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
