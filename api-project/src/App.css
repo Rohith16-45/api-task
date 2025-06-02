@@ -1,0 +1,71 @@
+body{
+    text-align: center;
+    align-items: center;
+}
+
+.deva{
+    background-color: darkgrey;
+    border: 1px solid black;
+    padding:10px 20px;
+    width:100%;
+    max-width: 450px;
+    display: inline-block;
+    height: 550px;
+    margin:auto;
+    margin-top: 27px;
+    resize: vertical;
+    align-items: center;
+}
+
+
+.input{
+    width: 100%;
+    height:auto;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+.button{
+    color:white;
+    background-color:#0349fc;
+    width:100%;
+    height:auto;
+    border:none;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.button:hover{
+    background-color:#195aff;
+  cursor: pointer;
+}
+
+h1{
+    font-family: Arial, sans-serif;
+}
+
+.devaraj{
+    background-color: darkgrey;
+    border: 1px solid black;
+    padding:10px 20px;
+    width:100%;
+    max-width: 750px;
+    display:inline-block;
+    height:auto;
+    margin:auto;
+    resize: vertical;
+    align-items: center;
+}
+
+
+.action{
+    color:white;
+    background-color: #0349fc;
+    border: 1px solid lightblue;
+    cursor: pointer;
+    padding:5px;
+    width:12%;
+    border-radius: 6px;
+   
+}
