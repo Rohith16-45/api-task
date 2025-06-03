@@ -47,7 +47,7 @@ function Dashboard() {
       console.log('Calculated total count:', totalCount);
       
       
-      const finalTotalCount = totalCount > 0 ? totalCount : 558; 
+      const finalTotalCount = totalCount > 0 ? totalCount : 515; 
       const calculatedTotalPages = Math.ceil(finalTotalCount / pageSize);
       setTotalPages(calculatedTotalPages);
       console.log('Total pages:', calculatedTotalPages); 
