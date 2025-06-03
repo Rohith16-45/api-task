@@ -47,7 +47,7 @@ function Dashboard() {
       console.log('Calculated total count:', totalCount);
       
       
-      const finalTotalCount = totalCount > 0 ? totalCount : 515; 
+      const finalTotalCount = totalCount > 0 ? totalCount : 520; 
       const calculatedTotalPages = Math.ceil(finalTotalCount / pageSize);
       setTotalPages(calculatedTotalPages);
       console.log('Total pages:', calculatedTotalPages); 
@@ -87,8 +87,7 @@ function Dashboard() {
               <td style={{ padding: '5px' }}>{user.name || 'N/A'}</td>
               <td style={{ padding: '5px' }}>{user.email || 'N/A'}</td>
               <td>
-                <button className='action' style={{ width: '30%' }}>Edit</button>
-                <button className='action' style={{ width: '35%' }}>Delete</button>
+                <button className='action' style={{ width: '60%' }}>Details</button>
               </td>
             </tr>
           ))}
