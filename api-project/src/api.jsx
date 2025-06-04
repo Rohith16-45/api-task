@@ -6,10 +6,11 @@ const api = {
   VERIFICATION: `${LIVE_URL}/user/email/verification`, 
   LOGIN: `${LIVE_URL}/user/login`,
   GET_ALL_USERS: `${LIVE_URL}/user`,
-  CATEGORY: `${LIVE_URL}/category`,
-  PRODUCT: `${LIVE_URL}/product`,
-  ORDER: `${LIVE_URL}/order`,
-  COMMON_COUNTRIES: `${LIVE_URL}/common/countries`,
+  GET_USER_BY_ID: `${LIVE_URL}/user`,         // GET /user/:id
+  UPDATE_USER   : `${LIVE_URL}/user`,         // PUT /user/:id
+  DELETE_USER   : `${LIVE_URL}/user`, 
+
+
 
   
   
@@ -17,6 +18,10 @@ const api = {
 
 export default api;
 export { BASE_URL, LIVE_URL, api };
+
+
+
+
 
 
 
