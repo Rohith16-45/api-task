@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from './api';
+import api from '../service/api';
 import axios from 'axios';
 
 function Dashboard() {
@@ -47,7 +47,7 @@ function Dashboard() {
       console.log('Calculated total count:', totalCount);
       
       
-      const finalTotalCount = totalCount > 0 ? totalCount : 613; 
+      const finalTotalCount = totalCount > 0 ? totalCount : 732; 
       const calculatedTotalPages = Math.ceil(finalTotalCount / pageSize);
       setTotalPages(calculatedTotalPages);
       console.log('Total pages:', calculatedTotalPages); 
@@ -86,11 +86,12 @@ function Dashboard() {
             <tr key={user.id || user.email} style={{ backgroundColor: 'lightblue' }}>
               <td style={{ padding: '5px' }}>{user.name || 'N/A'}</td>
               <td style={{ padding: '5px' }}>{user.email || 'N/A'}</td>
+              
               <td>
                 
                 <button 
                 onClick={() =>navigate(`/userdetail/${user.id}`, { state: { user } })} 
-                className="action"style={{ width: '50%' }}>Details</button>
+                className="action"style={{ width: '50%' }}>Edit</button>
               </td>
             </tr>
           ))}
@@ -100,16 +101,14 @@ function Dashboard() {
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
-          style={{ marginRight: '10px', padding: '5px 10px' }}
-        >
+          style={{ marginRight: '10px', padding: '5px 10px' }}>
           Previous
         </button>
         <span>Page {currentPage} of {totalPages}</span>
         <button
           onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={currentPage === totalPages}
-          style={{ marginLeft: '10px', padding: '5px 10px' }}
-        >
+          style={{ marginLeft: '10px', padding: '5px 10px' }}>
           Next
         </button>
       </div>

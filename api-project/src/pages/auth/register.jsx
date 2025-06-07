@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import api from './api';
+import api from '../../service/api';
 
 
 function Register() {
@@ -74,6 +74,7 @@ const handleFormSubmit = async (e) => {
         <button className="button" type="submit">Register
           
         </button>
+        <p style={{fontFamily:'Arial,sans-serif'}}>Already have an account? <Link to='/login' className='link'>Login here</Link></p>
       </form>
       <ToastContainer position="top-center" autoClose={3000} />
     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import api from './api';
+import api from '../../service/api';
 
 function UserDetail() {
   const { id } = useParams();
@@ -23,7 +23,7 @@ function UserDetail() {
       setUser({
         name: location.state.user.name || '',
         email: location.state.user.email || '',
-        password: '' // Don't prefill password
+        password: ''
       });
       setLoading(false);
     } else {
@@ -62,10 +62,10 @@ function UserDetail() {
   const handleUpdate = async () => {
     setError('');
     try {
-      // Only send password if it's not empty
-      const updateData = { name: user.name, email: user.email };
+      
+      const updateData = { name: user.name, email: user.email, password:user.password };
       if (user.password) updateData.password = user.password;
-     await axios.get(`${api.GET_USER_BY_ID}/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+     await axios.put(`${api.UPDATE_USER}/${id}`, updateData,{ headers: { Authorization: `Bearer ${token}` } });
       alert('User updated successfully!');
       navigate('/dashboard');
     } catch (err) {
@@ -130,7 +130,7 @@ function UserDetail() {
                 value={user.password}
                 onChange={handleChange}
                 style={{ width: '100%' }}
-                placeholder="Leave blank to keep unchanged"
+                placeholder="Required"
               />
             </td>
           </tr>

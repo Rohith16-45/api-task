@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
-import api from './api';
+import api from '../../service/api';
 
 function EmailVerification() {
   const [msg, setMsg] = useState('');

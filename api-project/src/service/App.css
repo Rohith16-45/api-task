@@ -3,19 +3,26 @@ body{
     align-items: center;
 }
 
-.deva{
+.deva {
     background-color: darkgrey;
     border: 1px solid black;
-    padding:10px 20px;
-    width:100%;
+    padding: 10px 20px;
+    width: 100%;
     max-width: 450px;
     display: inline-block;
     height: 550px;
-    margin:auto;
+    margin: auto;
     margin-top: 27px;
     resize: vertical;
     align-items: center;
+    /* 3D style additions */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 
+                0 8px 16px rgba(0, 0, 0, 0.3) inset;
+    border-radius: 10px;
+    /*transform: perspective(1000px) rotateX(1deg);*/
+    
 }
+
 
 
 .input{
@@ -68,4 +75,10 @@ h1{
     width:12%;
     border-radius: 6px;
    
+}
+
+.link{
+    text-decoration: none;
+    color:#0349fc;
+    font-family: Arial, sans-serif;
 }

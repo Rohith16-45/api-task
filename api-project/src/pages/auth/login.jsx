@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link  } from 'react-router-dom';
 import axios from 'axios';
-import api from './api';
+import api from '../../service/api';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -21,6 +21,7 @@ const Login = () => {
         throw new Error('User data not found or invalid in API response');
       }
       localStorage.setItem('token', res.data.data.token || res.data.accessToken);
+      
       localStorage.setItem('user', JSON.stringify(userData));
       navigate('/dashboard');
     } catch (err) {
@@ -37,20 +38,28 @@ const Login = () => {
         <input
           className='input'
           type="email"
-          placeholder='email'
+          placeholder='Email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         /><br /><br />
         <input
           className='input'
           type="password"
-          placeholder='password'
+          placeholder='Password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        /><br /><br />
+        /><br />
         {error && <p style={{ color: 'red' }}>{error}</p>}
+        <p><Link to='/forgotpassword' className='link'>Forgot password?
+        </Link>
+        </p>
         <button className='button' type='submit'>Login</button>
+        <p style={{fontFamily:'Arial, sans-serif'}}>Don't have an account? <Link to='/' className='link'>Register here
+        </Link>
+        </p>
       </form>
+      
+
     </div>
   );
 };
