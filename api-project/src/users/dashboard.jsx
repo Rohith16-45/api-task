@@ -47,7 +47,7 @@ function Dashboard() {
       console.log('Calculated total count:', totalCount);
       
       
-      const finalTotalCount = totalCount > 0 ? totalCount : 732; 
+      const finalTotalCount = totalCount > 0 ? totalCount : 742; 
       const calculatedTotalPages = Math.ceil(finalTotalCount / pageSize);
       setTotalPages(calculatedTotalPages);
       console.log('Total pages:', calculatedTotalPages); 
@@ -99,6 +99,7 @@ function Dashboard() {
       </table>
       <div style={{ marginTop: '20px', textAlign: 'center' }}>
         <button
+          className='action'
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
           style={{ marginRight: '10px', padding: '5px 10px' }}>
@@ -106,6 +107,7 @@ function Dashboard() {
         </button>
         <span>Page {currentPage} of {totalPages}</span>
         <button
+          className='action'
           onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={currentPage === totalPages}
           style={{ marginLeft: '10px', padding: '5px 10px' }}>

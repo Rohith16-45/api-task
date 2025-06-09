@@ -18,6 +18,7 @@ const AppRoutes = () => {
       <Route path='/userdetail/:id' element={<UserDetail />} />
       <Route path='/forgotpassword' element={<ForgotPassword />} />
       <Route path='/reset-password' element={<ResetPassword />} />
+      <Route path='/*' element={<Register />} />
     </Routes>
   );
 };
